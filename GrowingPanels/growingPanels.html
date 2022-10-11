@@ -83,6 +83,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        transition: font-size 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+          flex 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045), background 0.2s;
       }
 
       .panel > * {
@@ -92,6 +94,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: transform 0.5s;
       }
 
       .panel p {
@@ -105,6 +108,24 @@
         font-size: 4em;
       }
 
+      .panel > *:first-child {
+        transform: translateY(-100%);
+      }
+      .panel.open-active > *:first-child {
+        transform: translateY(0);
+      }
+      .panel > *:last-child {
+        transform: translateY(100%);
+      }
+      .panel.open-active > *:last-child {
+        transform: translateY(0);
+      }
+
+      .panel.open {
+        flex: 5;
+        font-size: 40px;
+      }
+
       @media only screen and (max-width: 600px) {
         .panel p {
           font-size: 1em;
@@ -115,5 +136,24 @@
         }
       }
     </style>
+
+    <script>
+      const panels = document.querySelectorAll(".panel");
+
+      function toggleOpen() {
+        this.classList.toggle("open");
+      }
+
+      function toggleActive(e) {
+        if (e.propertyName.includes("flex")) {
+          this.classList.toggle("open-active");
+        }
+      }
+
+      panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
+      panels.forEach((panel) =>
+        panel.addEventListener("transitionend", toggleActive)
+      );
+    </script>
   </body>
 </html>
