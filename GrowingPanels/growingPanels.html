@@ -1,10 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Growing Panels</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Growing Panels</title>
+  </head>
+  <body>
+    <div class="panels">
+      <div class="panel panel1">
+        <p>Hey</p>
+        <p>Let's</p>
+        <p>Dance</p>
+      </div>
+      <div class="panel panel2">
+        <p>Give</p>
+        <p>Take</p>
+        <p>Receive</p>
+      </div>
+      <div class="panel panel3">
+        <p>Experience</p>
+        <p>It</p>
+        <p>Today</p>
+      </div>
+      <div class="panel panel4">
+        <p>Give</p>
+        <p>All</p>
+        <p>You can</p>
+      </div>
+      <div class="panel panel5">
+        <p>Life</p>
+        <p>In</p>
+        <p>Motion</p>
+      </div>
+    </div>
+
+    <style>
+      html {
+        box-sizing: content-box;
+        background: #6b0f9c;
+        font-family: "helvetica neue";
+        font-size: 20px;
+        font-weight: 200;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .panel1 {
+        background-image: url(https://images.unsplash.com/photo-1460039230329-eb070fc6c77c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80);
+      }
+      .panel2 {
+        background-image: url(https://images.unsplash.com/photo-1475872711536-95ec04b9d290?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
+      }
+      .panel3 {
+        background-image: url(https://images.unsplash.com/photo-1492969176635-c19ab28851eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80);
+      }
+      .panel4 {
+        background-image: url(https://images.unsplash.com/photo-1446071103084-c257b5f70672?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=984&q=80);
+      }
+      .panel5 {
+        background-image: url(https://images.unsplash.com/photo-1442458017215-285b83f65851?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80);
+      }
+
+      .panels {
+        display: flex;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      .panel {
+        color: white;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.05);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .panel > * {
+        margin: 0;
+        width: 100%;
+        flex: 1 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .panel p {
+        text-transform: uppercase;
+        font-family: "Amatic SC", cursive;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 1), 0 0 5px rgba(0, 0, 0, 1);
+        font-size: 2em;
+      }
+
+      .panel p:nth-child(2) {
+        font-size: 4em;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .panel p {
+          font-size: 1em;
+        }
+
+        .panel p:nth-child(2) {
+          font-size: 2em;
+        }
+      }
+    </style>
+  </body>
 </html>
